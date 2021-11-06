@@ -22,7 +22,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="/UI/assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="/UI/assets/img/favicon.png">
   <title>
-    Soft UI Dashboard by Creative Tim
+    Laravel CMS
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -43,7 +43,7 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg  blur blur-rounded top-0  z-index-3 shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
           <div class="container-fluid">
-            <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " href="../pages/dashboard.html">
+            <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " href="#">
               Soft UI Dashboard
             </a>
             <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,25 +56,25 @@
             <div class="collapse navbar-collapse" id="navigation">
               <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                  <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="../pages/dashboard.html">
+                  <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="#">
                     <i class="fa fa-chart-pie opacity-6 text-dark me-1"></i>
                     Dashboard
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link me-2" href="../pages/profile.html">
+                  <a class="nav-link me-2" href="#">
                     <i class="fa fa-user opacity-6 text-dark me-1"></i>
                     Profile
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link me-2" href="../pages/sign-up.html">
+                  <a class="nav-link me-2" href="#">
                     <i class="fas fa-user-circle opacity-6 text-dark me-1"></i>
                     Sign Up
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link me-2" href="../pages/sign-in.html">
+                  <a class="nav-link me-2" href="#">
                     <i class="fas fa-key opacity-6 text-dark me-1"></i>
                     Sign In
                   </a>
@@ -82,7 +82,7 @@
               </ul>
               <ul class="navbar-nav d-lg-block d-none">
                 <li class="nav-item">
-                  <a href="https://www.creative-tim.com/product/soft-ui-dashboard" class="btn btn-sm btn-round mb-0 me-1 bg-gradient-dark">Free download</a>
+                  <a href="#" class="btn btn-sm btn-round mb-0 me-1 bg-gradient-dark">Free download</a>
                 </li>
               </ul>
             </div>
@@ -92,6 +92,7 @@
       </div>
     </div>
   </div>
+
   <section>
     <div class="page-header section-height-75">
       <div class="container">
@@ -104,24 +105,25 @@
               </div>
               <div class="card-body">
 
-                <form class="form" method="post" action="{{ route('login') }}">
+                <form method="POST" action="{{ route('login') }}">
+                     @csrf
                   <label>Email</label>
                   <div class="mb-3">
-                    <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                   </div>
                   <label>Password</label>
                   <div class="mb-3">
-                    <input type="email" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
+                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                   </div>
                   <div class="form-check form-switch">
                     <input class="form-check-input" type="checkbox" id="rememberMe" checked="">
                     <label class="form-check-label" for="rememberMe">Remember me</label>
                   </div>
                   <div class="text-center">
-                    <button type="button" class="btn bg-gradient-info w-100 mt-4 mb-0">Sign in</button>
+                    <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Sign in</button>
                   </div>
                 </form>
-                
+
               </div>
               <div class="card-footer text-center pt-0 px-lg-2 px-1">
                 <p class="mb-4 text-sm mx-auto">
@@ -139,7 +141,11 @@
         </div>
       </div>
     </div>
+
   </section>
+
+
+
   <!-- -------- START FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->
   <footer class="footer py-4 fixed-bottom">
     <div class="container">

@@ -1,18 +1,3 @@
-<!--
-=========================================================
-* Soft UI Dashboard - v1.0.2
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/soft-ui-dashboard/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -100,7 +85,7 @@
           <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
             <div class="card card-plain mt-8">
               <div class="card-header pb-0 text-left bg-transparent">
-                <h3 class="font-weight-bolder text-info text-gradient">Welcome back</h3>
+                <h3 class="font-weight-bolder text-info text-gradient">Selamat Datang Di Portal MR. Buncit</h3>
                 <p class="mb-0">Enter your email and password to sign in</p>
               </div>
               <div class="card-body">
@@ -128,11 +113,11 @@
               <div class="card-footer text-center pt-0 px-lg-2 px-1">
                 <p class="mb-4 text-sm mx-auto">
                   Don't have an account?
-                  <a href="javascript:;" class="text-info text-gradient font-weight-bold">Sign up</a>
+                  <a href="{{ route('register') }}" class="text-info text-gradient font-weight-bold">Daftar Cuk</a>
                 </p>
               </div>
             </div>
-          </div>
+          </div>  
           <div class="col-md-6">
             <div class="oblique position-absolute top-0 h-100 d-md-block d-none me-n8">
               <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" style="background-image:url('/UI/assets/img/curved-images/curved6.jpg')"></div>

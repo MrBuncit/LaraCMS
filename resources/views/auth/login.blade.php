@@ -44,7 +44,7 @@
         <nav class="navbar navbar-expand-lg  blur blur-rounded top-0  z-index-3 shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
           <div class="container-fluid">
             <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " href="#">
-              Soft UI Dashboard
+              Lara CMS
             </a>
             <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon mt-2">
@@ -128,7 +128,7 @@
               <div class="card-footer text-center pt-0 px-lg-2 px-1">
                 <p class="mb-4 text-sm mx-auto">
                   Don't have an account?
-                  <a href="javascript:;" class="text-info text-gradient font-weight-bold">Sign up</a>
+                  <a href="{{ route('register') }}" class="text-info text-gradient font-weight-bold">Sign up</a>
                 </p>
               </div>
             </div>

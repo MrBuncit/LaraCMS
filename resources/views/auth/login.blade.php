@@ -113,11 +113,11 @@
               <div class="card-footer text-center pt-0 px-lg-2 px-1">
                 <p class="mb-4 text-sm mx-auto">
                   Don't have an account?
-                  <a href="{{ route('register') }}" class="text-info text-gradient font-weight-bold">Daftar Cuk</a>
+                  <a href="{{ url('/register') }}" class="text-info text-gradient font-weight-bold">Daftar Cuk</a>
                 </p>
               </div>
             </div>
-          </div>  
+          </div>
           <div class="col-md-6">
             <div class="oblique position-absolute top-0 h-100 d-md-block d-none me-n8">
               <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" style="background-image:url('/UI/assets/img/curved-images/curved6.jpg')"></div>
@@ -132,7 +132,7 @@
 
 
   <!-- -------- START FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->
-  <footer class="footer py-4 fixed-bottom">
+  {{-- <footer class="footer py-4 fixed-bottom">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mb-4 mx-auto text-center">
@@ -157,7 +157,7 @@
         </div>
       </div>
     </div>
-  </footer>
+  </footer> --}}
   <!-- -------- END FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->
   <!--   Core JS Files   -->
   <script src="/UI/assets/js/core/popper.min.js"></script>

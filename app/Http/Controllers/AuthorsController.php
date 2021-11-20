@@ -3,8 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers;
+use App\Author;
+use Yajra\DataTables\Html\Builder;
+use Yajra\DataTables\DataTables;
+use session;
 
-class BooksController extends Controller
+class AuthorsController extends Controller
 {
     /**
      * Display a listing of the resource.

@@ -16,4 +16,9 @@
     <link href="/UI/assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
     <link id="pagestyle" href="/UI/assets/css/soft-ui-dashboard.css?v=1.0.2" rel="stylesheet" />
+
+    <!-- CSS Datatable -->
+    <link href="/css/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="/css/jquery.dataTables.css" rel="stylesheet" />
+
 </head>

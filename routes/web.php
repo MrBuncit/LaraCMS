@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthorsController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +24,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function () {
+    Route::get('/books', [App\Http\Controllers\BooksController::class, 'index'])->name('books');
+    Route::get('/authors', [App\Http\Controllers\AuthorsController::class, 'index'])->name('authors');
+    Route::get('/staffs', [App\Http\Controllers\StaffsController::class, 'index'])->name('staffs');
+});
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

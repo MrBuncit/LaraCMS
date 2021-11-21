@@ -1,20 +1,7 @@
 <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
     navbar-scroll="true">
     <div class="container-fluid py-1 px-3">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-                @if (Auth::check())
-                    <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark"
-                            href="{{ url('/home') }}">Dashboard</a>
-                    </li>
-                    {{-- <li class="breadcrumb-item text-sm text-dark active" aria-current="page" href="{{ url('/home') }}">Author</li> --}}
-                @endif
-                @role('admin')
-                    <li><a href="{{ route('books.index') }}">Buku</a></li>
-                @endRole
-            </ol>
-            <h6 class="font-weight-bolder mb-0">Dashboards</h6>
-        </nav>
+
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
             <div class="ms-md-auto pe-md-3 d-flex align-items-center">
                 <div class="input-group">
@@ -26,8 +13,6 @@
                 <li class="nav-item d-flex align-items-center">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-
-
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                                      document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}

@@ -3,6 +3,11 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+use App\Models\Author;
+use App\Models\Book;
 
 class BooksSeeder extends Seeder
 {

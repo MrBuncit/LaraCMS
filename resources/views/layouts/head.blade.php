@@ -16,4 +16,16 @@
     <link href="/UI/assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
     <link id="pagestyle" href="/UI/assets/css/soft-ui-dashboard.css?v=1.0.2" rel="stylesheet" />
+
+    <!-- CSS Datatable -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+    {{-- <link href="/css/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="/css/jquery.dataTables.css" rel="stylesheet" />
+    <link href="/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="/css/dataTables.bootstrap.min.css" rel="stylesheet" /> --}}
+
+
 </head>

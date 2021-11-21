@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthorsController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,11 +25,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function () {
     Route::get('/books', [App\Http\Controllers\BooksController::class, 'index'])->name('books');
-    // Route::resource('author', 'AuthorsController');
-    // Route::resource('books', 'BooksController');
+    Route::get('/authors', [App\Http\Controllers\AuthorsController::class, 'index'])->name('authors');
+    Route::get('/staffs', [App\Http\Controllers\StaffsController::class, 'index'])->name('staffs');
 });
-
-Route::get('/staff', [App\Http\Controllers\StaffsController::class, 'index'])->name('staff');
-

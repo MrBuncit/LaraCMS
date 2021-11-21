@@ -173,12 +173,10 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        // Laratrust\LaratrustServiceProvider::class,
-        Yajra\DataTables\DataTablesServiceProvider::class,
-// Laratrust\LaratrustServiceProvider::class
+        Yajra\Datatables\DatatablesServiceProvider::class,
 
     ],
 
@@ -195,6 +193,7 @@ return [
 
     'aliases' => [
 
+        'Datatables' => Yajra\Datatables\Facades\Datatables::class,
         'App' => Illuminate\Support\Facades\App::class,
         'Arr' => Illuminate\Support\Arr::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,

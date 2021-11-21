@@ -1,17 +1,20 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+namespace Database\Seeders;
 
-class CreateAuthorsTable extends Migration
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class AuthorsSeeder extends Seeder
 {
     /**
-     * Run the migrations.
+     * Run the database seeds.
      *
      * @return void
      */
-    public function up()
+    public function run()
     {
         Schema::create('authors', function (Blueprint $table) {
             $table->increments('id');
@@ -20,11 +23,7 @@ class CreateAuthorsTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+
     public function down()
     {
         Schema::dropIfExists('authors');

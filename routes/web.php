@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthorsController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,5 +30,3 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], func
     Route::get('/authors', [App\Http\Controllers\AuthorsController::class, 'index'])->name('authors');
     Route::get('/staffs', [App\Http\Controllers\StaffsController::class, 'index'])->name('staffs');
 });
-
-

@@ -3,6 +3,12 @@
     <script src="./UI/assets/js/plugins/smooth-scrollbar.min.js"></script>
     <script src="./UI/assets/js/plugins/chartjs.min.js"></script>
     <script src="./UI/assets/js/plugins/Chart.extension.js"></script>
+
+    <!-- JS DataTables -->
+    <script src="/js/dataTables.bootstrap.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+
+
     <script>
         var ctx = document.getElementById("chart-bars").getContext("2d");
 

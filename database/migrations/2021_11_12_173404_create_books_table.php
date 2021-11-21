@@ -14,8 +14,8 @@ class CreateBooksTable extends Migration
     public function up()
     {
         Schema::create('books', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->increments('id');
+            $table->string('title');
             $table->integer('author_id')->unsigned();
             $table->integer('amount')->unsigned();
             $table->string('cover')->nullable();
@@ -33,6 +33,6 @@ class CreateBooksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('books');
+         Schema::dropIfExists('books');
     }
 }

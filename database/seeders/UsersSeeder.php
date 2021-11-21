@@ -3,8 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Role;
-use App\User;
+use App\Models\Role;
+// use App\Role;
+use App\Models\User;
 
 class UsersSeeder extends Seeder
 {
@@ -34,6 +35,7 @@ class UsersSeeder extends Seeder
         $admin->password = bcrypt('rahasia');
         $admin->save();
         $admin->attachRole($adminRole);
+
         // Membuat sample member
         $member = new User();
         $member->name = "Sample Member";

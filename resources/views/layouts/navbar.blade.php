@@ -13,8 +13,6 @@
                 <li class="nav-item d-flex align-items-center">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-
-
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                                      document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}

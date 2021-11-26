@@ -43,6 +43,7 @@ class AuthorsController extends Controller
     public function create()
     {
         //
+        return view('authors.create');
     }
 
     /**
@@ -51,10 +52,13 @@ class AuthorsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
+public function store(Request $request)
+{
+$this->validate($request, ['name' => 'required|unique:authors']);
+$author = Author::create($request->all());
+return redirect()->route('authors.index');
+}
+
 
     /**
      * Display the specified resource.

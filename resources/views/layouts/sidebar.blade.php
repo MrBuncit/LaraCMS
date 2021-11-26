@@ -4,7 +4,7 @@
             <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute right-0 top-0 d-none d-xl-none"
                 aria-hidden="true" id="iconSidenav"></i>
             <a class="navbar-brand m-0" href="/UI/pages/dashboard.html">
-                <span class="ms-1 font-weight-bold">Soft UI Dashboards</span>
+                <span class="ms-1 font-weight-bold">Balada [La]ravel</span>
             </a>
         </div>
         <hr class="horizontal dark mt-0">
@@ -31,17 +31,17 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link  " href="{{ route('authors') }}">
+                    <a class="nav-link  " href="{{ route('authors.index') }}">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <span class="fa fa-users"></span>
+                            <span class="fa fa-user-secret"></span>
                         </div>
                         <span class="nav-link-text ms-1">Penulis</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link  " href="{{ route('books') }}">
+                    <a class="nav-link  " href="{{ route('authors.index') }}">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <span class="fa fa-users"></span>

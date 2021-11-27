@@ -10,6 +10,7 @@
     <main class="main-content mt-1 border-radius-lg">
         @include ('layouts.navbar')
         <div class="container">
+            @include('layouts._flash')
             @yield('content')
         </div>
     </main>

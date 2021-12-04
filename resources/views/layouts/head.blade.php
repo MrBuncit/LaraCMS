@@ -4,7 +4,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="/UI/assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="/UI/assets/img/favicon.png">
     <title>
-        Soft UI Dashboard by Creative Tim
+        [Mr] Bunc!t
     </title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -32,4 +32,11 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/css/jquery.dataTables.min.css" rel="stylesheet" />
     <link href="/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+
+    <!-- CSS Selectize -->
+    <link href="/css/selectize.bootstrap3.css" rel="stylesheet" />
+    <link href="/css/selectize.css" rel="stylesheet" />
+
+
+
 </head>

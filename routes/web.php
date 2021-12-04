@@ -27,6 +27,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function () {
     Route::resource('authors', 'App\Http\Controllers\AuthorsController');
-    Route::get('/books', [App\Http\Controllers\BooksController::class, 'index'])->name('books');
+    Route::resource('books', 'App\Http\Controllers\booksController');
     Route::get('/staffs', [App\Http\Controllers\StaffsController::class, 'index'])->name('staffs');
 });

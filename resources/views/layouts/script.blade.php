@@ -1,8 +1,11 @@
     <script src="/UI/assets/js/core/popper.min.js"></script>
-    <script src="./UI/assets/js/core/bootstrap.min.js"></script>
-    <script src="./UI/assets/js/plugins/smooth-scrollbar.min.js"></script>
-    <script src="./UI/assets/js/plugins/chartjs.min.js"></script>
-    <script src="./UI/assets/js/plugins/Chart.extension.js"></script>
+    <script src="/UI/assets/js/core/bootstrap.min.js"></script>
+    <script src="/UI/assets/js/plugins/smooth-scrollbar.min.js"></script>
+    <script src="/UI/assets/js/plugins/chartjs.min.js"></script>
+    <script src="/UI/assets/js/plugins/Chart.extension.js"></script>
+
+
+
 
     {{-- <!-- JS DataTables print nih -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -205,4 +208,12 @@
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-    <script src="./UI/assets/js/soft-ui-dashboard.min.js?v=1.0.2"></script>
+    <script src="/UI/assets/js/soft-ui-dashboard.min.js"></script>
+
+    {{-- script --}}
+    <script src="/js/custome.js"></script>
+
+    <!-- JS Selectize -->
+    <script src="/js/selectize.min.js"></script>
+
+    @yield('scripts')

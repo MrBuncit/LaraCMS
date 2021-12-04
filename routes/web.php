@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\AuthorsController;
 use Illuminate\Support\Facades\Route;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 
@@ -22,6 +25,13 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function () {
+    Route::resource('authors', 'App\Http\Controllers\AuthorsController');
+    Route::resource('books', 'App\Http\Controllers\booksController');
+    Route::get('/staffs', [App\Http\Controllers\StaffsController::class, 'index'])->name('staffs');
+});

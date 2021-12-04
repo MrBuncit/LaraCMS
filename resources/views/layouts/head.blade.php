@@ -34,7 +34,7 @@
     <link href="/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
 
     <!-- CSS Selectize -->
-    <link href="/css/selectize.bootstrap3.css" rel="stylesheet" />
+    {{-- <link href="/css/selectize.bootstrap3.css" rel="stylesheet" /> --}}
     <link href="/css/selectize.css" rel="stylesheet" />
 
 

@@ -20,6 +20,9 @@ public function index(Request $request, Builder $htmlBuilder)
     if ($request->ajax()) {
         $books = Book::with('author');
         return Datatables::of($books)
+        ->addColumn('stock', function($book) {
+            return $book->stock;
+        })
         ->addColumn('action', function($book){
             if (Laratrust::hasRole('admin')) return '';
             // return '<a class="btn btn-xs btn-primary" href="#">Pinjam</a>';
@@ -29,6 +32,7 @@ public function index(Request $request, Builder $htmlBuilder)
 
     $html = $htmlBuilder
     ->addColumn(['data' => 'title', 'name'=>'title', 'title'=>'Judul'])
+    ->addColumn(['data' => 'stock', 'name'=>'stock', 'title'=>'Stock', 'orderable'=>false, 'searchable'=>false])
     ->addColumn(['data' => 'author.name', 'name'=>'author.name', 'title'=>'Penulis'])
     ->addColumn(['data' => 'action', 'name'=>'action', 'title'=>'', 'orderable'=>false, 'searchable'=>false]);
 

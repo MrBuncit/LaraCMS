@@ -43,7 +43,7 @@
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/dataTables.bootstrap4.min.js"></script>
 
-    <script>
+    {{-- <script>
         var ctx = document.getElementById("chart-bars").getContext("2d");
 
         new Chart(ctx, {
@@ -204,7 +204,7 @@
             }
             Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
         }
-    </script>
+    </script> --}}
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->

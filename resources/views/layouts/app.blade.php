@@ -5,7 +5,7 @@
     @include ('layouts.head')
 </head>
 
-<body class="g-sidenav-show   bg-gray-100">
+<body class="g-sidenav-show bg-gray-100">
     @include ('layouts.sidebar')
     <main class="main-content mt-1 border-radius-lg">
         @include ('layouts.navbar')

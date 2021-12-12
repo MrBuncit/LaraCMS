@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 // use App\Http\Controllers\Auth;
 use Illuminate\Support\Facades\Auth;
+use Laratrust\LaratrustFacade as Laratrust;
+
+use function PHPUnit\Framework\returnSelf;
+
 class HomeController extends Controller
 {
     /**
@@ -26,19 +30,32 @@ class HomeController extends Controller
     public function index()
     {
         // return Auth::user();
+        if (Laratrust::hasRole('admin')) return $this->adminDashboard();
+        if (Laratrust::hasRole('member')) return $this->memberDashboard();
         return view('home');
-
     }
 
-    public function userindex()
+    protected function adminDashboard()
     {
-        return view('home');
-
+        return view('dashboard.admin');
     }
 
-    public function adminindex()
+    protected function memberDashboard()
     {
-        return view('home');
-
+        // return view('dashboard.member');
+        $borrowLogs = Auth::user()->borrowLogs()->borrowed()->get();
+        return view('dashboard.member', compact('borrowLogs'));
     }
+
+    // public function userindex()
+    // {
+    //     return view('home');
+
+    // }
+
+    // public function adminindex()
+    // {
+    //     return view('home');
+
+    // }
 }

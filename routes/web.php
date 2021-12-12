@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\AuthorsController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -16,10 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+
+Route::get('/', 'App\Http\Controllers\GuestController@index');
+
+Route::get('/auth', function () {
     return view('auth.login');
 });
-
 
 Auth::routes();
 
@@ -30,3 +31,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], func
     Route::resource('books', 'App\Http\Controllers\booksController');
     Route::get('/staffs', [App\Http\Controllers\StaffsController::class, 'index'])->name('staffs');
 });
+
+Route::get('books/{book}/borrow', [
+'middleware' => ['auth', 'role:member'],
+'as' => 'guest.books.borrow',
+'uses' => 'App\Http\Controllers\BooksController@borrow'
+]);
+
+

@@ -17,8 +17,9 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use App\Models\BorrowLog;
 use Illuminate\Support\Facades\Auth;
 use App\Exceptions\BookException;
+use PhpParser\Node\Expr\FuncCall;
 
-
+use function PHPUnit\Framework\returnSelf;
 
 class BooksController extends Controller
 {
@@ -177,7 +178,8 @@ class BooksController extends Controller
         // ]);
 
         $book = Book::find($id);
-        $book->update($request->all());
+        // $book->update($request->all());
+        if(!$book->update($request->all())) return redirect()->back();
 
         if ($request->hasFile('cover')) {
             //mengambil cover yang diupload berikut extensinya
@@ -227,9 +229,13 @@ class BooksController extends Controller
     {
         //
         $book = Book::find($id);
+        $cover = $book->cover;
+        if (!$book->delete()) return redirect()->back();
+            # code...
 
         //hapus cover lama, jika ada
-        if ($book->cover) {
+        if($cover) {
+        // if ($book->cover) {
             $old_cover = $book->cover;
             $filepath = public_path() . DIRECTORY_SEPARATOR . 'img' . DIRECTORY_SEPARATOR . $book->cover;
 
@@ -240,13 +246,33 @@ class BooksController extends Controller
             }
         }
 
-        $book->delete();
+        // $book->delete();
 
         Session::flash("flash_notification", [
             "level"=>"success",
             "message"=>"Buku berhasil dihapus"
         ]);
 
-        return redirect()->route('books.index');
+        return redirect()->route('admin.books.index');
+    }
+
+    public function returnBack($book_id)
+    {
+        $borrowLog = BorrowLog::where('user_id', Auth::user()->id)
+        ->where('book_id', $book_id)
+        ->where('is_returned', 0)
+        ->first();
+
+        if ($borrowLog) {
+            $borrowLog->is_returned = true;
+            $borrowLog->save();
+
+            Session::flash("flash_notification", [
+                "level" => "success",
+                "message" => "Berhasil mengembalikan " . $borrowLog->book->title
+            ]);
+        }
+
+        return redirect('/home');
     }
 }

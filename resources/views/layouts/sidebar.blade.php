@@ -13,7 +13,6 @@
 
                 @if (Auth::check())
                     <li><a href="{{ route('home') }}"></a></li>
-
                 @endif
                 @role('admin')
                     <li class="nav-item">
@@ -90,8 +89,10 @@
                     <li class="nav-item mt-3">
                         <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link  " href="#">
+                        <a class="nav-link" href="{{ route('profile') }}">
+
                             <div
                                 class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <span class="fa fa-users"></span>
@@ -99,6 +100,7 @@
                             <span class="nav-link-text ms-1">Profile</span>
                         </a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link  " href="#">
                             <div

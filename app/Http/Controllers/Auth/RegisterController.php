@@ -5,9 +5,14 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use App\Models\Role;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class RegisterController extends Controller
 {
@@ -39,6 +44,7 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+        $this->middleware('user-should-verified');
     }
 
     /**
@@ -52,7 +58,8 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'g-recaptcha-response' => 'required|captcha',
         ]);
     }
 
@@ -64,10 +71,32 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            // 'password' => Hash::make($data['password']),
+            'password' => bcrypt($data['password']),
         ]);
+        $memberRole = Role::where('name', 'member')->first();
+        $user->attachRole($memberRole);
+        $user->sendVerification();
+        return $user;
     }
+
+    public function verify(Request $request, $token)
+    {
+        $email = $request->get('email');
+        $user = User::where('verification_token', $token)->where('email', $email)->first();
+        if ($user)
+        {
+        $user->verify();
+        Session::flash("flash_notification", [
+            "level" => "success",
+            "message" => "Berhasil melakukan verifikasi."
+        ]);
+        Auth::login($user);
+        }
+    return redirect('/');
+    }
+
 }

@@ -66,16 +66,16 @@ class AuthorsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-public function store(Request $request)
-{
-$this->validate($request, ['name' => 'required|unique:authors']);
-$author = Author::create($request->all());
-Session::flash("flash_notification", [
-"level"=>"success",
-"message"=>"Berhasil menyimpan $author->name"
-]);
-return redirect()->route('authors.index');
-}
+    public function store(Request $request)
+    {
+    $this->validate($request, ['name' => 'required|unique:authors']);
+    $author = Author::create($request->all());
+    Session::flash("flash_notification", [
+    "level"=>"success",
+    "message"=>"Berhasil menyimpan $author->name"
+    ]);
+    return redirect()->route('authors.index');
+    }
 
 
     /**

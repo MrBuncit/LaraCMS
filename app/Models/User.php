@@ -11,7 +11,8 @@ use Laratrust\Traits\LaratrustUserTrait;
 use App\Models\Book;
 use App\Models\BorrowLog;
 use App\Exceptions\BookException;
-
+use Illuminate\Support\Facades\Mail;
+use phpDocumentor\Reflection\Types\This;
 
 class User extends Authenticatable
 {
@@ -46,6 +47,7 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'is_verified' => 'boolean',
     ];
 
     public function borrow(Book $book)
@@ -61,5 +63,35 @@ throw new BookException("Buku $book->title sedang anda pinjam.");
     public function borrowLogs()
     {
         return $this->hasMany('App\Models\BorrowLog');
+    }
+
+    public function sendVerification()
+    {
+        $token = $this->generateVerificationToken();
+        $user = $this;
+        // $token = str_random(40);
+        // $user->verification_token = $token;
+        // $user->save();
+        Mail::send('auth.emails.verification', compact('user', 'token'), function ($m) use ($user) {
+            $m->to($user->email, $user->name)->subjects('Verifikasi Akun Laracms');
+        });
+    }
+
+    public function verify()
+    {
+        $this->is_verified = 1;
+        $this->verification_token = null;
+        $this->save();
+    }
+
+    public function generateVerificationToken()
+    {
+        $token = $this->verification_token;
+        if (!$token) {
+            $token = str_random(40);
+            $this->verification_token = $token;!$
+            $this->save();
+        }
+        return $token;
     }
 }

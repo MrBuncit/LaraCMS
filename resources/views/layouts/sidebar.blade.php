@@ -4,7 +4,7 @@
             <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute right-0 top-0 d-none d-xl-none"
                 aria-hidden="true" id="iconSidenav"></i>
             <a class="navbar-brand m-0" href="/UI/pages/dashboard.html">
-                <span class="ms-1 font-weight-bold">Balada [La]ravel</span>
+                <span class="ms-1 font-weight-bold">Belajar [La]ravel</span>
             </a>
         </div>
         <hr class="horizontal dark mt-0">
@@ -13,7 +13,6 @@
 
                 @if (Auth::check())
                     <li><a href="{{ route('home') }}"></a></li>
-
                 @endif
                 @role('admin')
                     <li class="nav-item">
@@ -43,6 +42,26 @@
                                 <span class="fa fa-users"></span>
                             </div>
                             <span class="nav-link-text ms-1">Buku</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link  " href="{{ route('members.index') }}">
+                            <div
+                                class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                                <span class="fa fa-users"></span>
+                            </div>
+                            <span class="nav-link-text ms-1">Member</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link  " href="{{ route('statistics.index') }}">
+                            <div
+                                class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                                <span class="fa fa-users"></span>
+                            </div>
+                            <span class="nav-link-text ms-1">Peminjaman</span>
                         </a>
                     </li>
 
@@ -90,8 +109,10 @@
                     <li class="nav-item mt-3">
                         <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link  " href="#">
+                        <a class="nav-link" href="{{ route('profile') }}">
+
                             <div
                                 class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <span class="fa fa-users"></span>
@@ -99,6 +120,7 @@
                             <span class="nav-link-text ms-1">Profile</span>
                         </a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link  " href="#">
                             <div

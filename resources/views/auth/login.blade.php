@@ -112,7 +112,7 @@
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="rememberMe" checked="">
                                         <label class="form-check-label" for="rememberMe">Ingat saya</label>
-                                        <a href="">Lupa Password</a>
+                                        <a href="{{ url('/password/reset') }}">Lupa Password</a>
                                     </div>
                                     <div class="text-center">
                                         <button type="submit"

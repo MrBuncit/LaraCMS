@@ -13,7 +13,7 @@
             <div class="card">
                 <div class="card-header">
                     <div class="card-body px-0 pt-0 pb-2">
-                        {!! Form::open(['url' => '/editpassword', 'method' => 'post', 'class' => 'form-horizontal']) !!}
+                        {!! Form::open(['url' => '/updatepassword', 'method' => 'post', 'class' => 'form-horizontal']) !!}
 
                         <div class="form-group{{ $errors->has('     password') ? ' has-error' : '' }}">
                             {!! Form::label('password', 'Password lama', ['class' => 'col-md-4 control-label']) !!}
@@ -27,7 +27,7 @@
                             {!! Form::label('new_password', 'Password Baru', ['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-6">
                                 {!! Form::password('new_password', ['class' => 'form-control']) !!}
-                                {!! $errors->first('new_password', '<p class=>"help-block">:message</p>') !!}
+                                {!! $errors->first('new_password', '<p class="help-block">:message</p>') !!}
                             </div>
                         </div>
 
@@ -35,7 +35,7 @@
                             {!! Form::label('new_password_confirmation', 'Konfirmasi password baru', ['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-6">
                                 {!! Form::password('new_password_confirmation', ['class' => 'form-control']) !!}
-                                {!! $errors->first('new_password_confirmation', '<p class=>"help-block">:message</p>') !!}
+                                {!! $errors->first('new_password_confirmation', '<p class="help-block">:message</p>') !!}
                             </div>
                         </div>
 

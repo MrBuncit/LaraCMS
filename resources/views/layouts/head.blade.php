@@ -21,17 +21,23 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css" /> --}}
 
+    <!-- CSS Datatable Online -->
+    {{-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css"> --}}
+    <!-- CSS End Datatable Online -->
+
 
 
     <!-- CSS Datatable CDN -->
-    {{-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" /> --}}
-    {{-- <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet"> --}}
-    {{-- <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet"> --}}
+    {{-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet"> --}}
 
     <!-- CSS Datatable Offline -->
     <link href="/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/css/jquery.dataTables.min.css" rel="stylesheet" />
     <link href="/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <!-- CSS End Datatable Offline -->
+
 
     <!-- CSS Selectize -->
     {{-- <link href="/css/selectize.bootstrap3.css" rel="stylesheet" /> --}}

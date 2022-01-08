@@ -42,6 +42,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], func
 
     Route::get('/staffs', [App\Http\Controllers\StaffsController::class, 'index'])->name('staffs');
 
+    Route::resource('members', 'App\Http\Controllers\MembersController');
+
+    Route::get('statistics', [
+        'as'=>'statistics.index',
+        'uses'=>'App\Http\Controllers\StatisticsController@index'
+    ]);
 });
 
 Route::get('editpassword', [App\Http\Controllers\SettingsController::class, 'editPassword'])->name('editpassword');
@@ -63,4 +69,6 @@ Route::put('books/{book}/return', [
 ]);
 
 Route::get('auth/verify/{token}', 'App\Http\Controllers\Auth\RegisterController@verify');
+
+Route::get('auth/send_verification', 'App\Http\Controllers\Auth\RegisterController@sendVerification');
 

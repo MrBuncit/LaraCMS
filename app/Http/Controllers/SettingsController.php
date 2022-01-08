@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
-
-
 use Illuminate\Http\Request;
 
 class SettingsController extends Controller
@@ -61,7 +59,7 @@ class SettingsController extends Controller
             'password.passcheck' => 'Password lama tidak sesuai'
         ]);
 
-        $user->password = bcrcypt($request->get('new_password'));
+        $user->password = bcrypt($request->get('new_password'));
         $user->save();
 
         Session::flash("flash_notification", [
